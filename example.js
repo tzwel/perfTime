@@ -1,4 +1,4 @@
-const { perfTime } = require('./perfTime')
+const { perfTime } = require('tzwel@perfTime')
 
 function someRandomFunction() {
 	const measurement = new perfTime({function: someRandomFunction})
