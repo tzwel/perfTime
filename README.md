@@ -7,7 +7,7 @@ It works by wrapping `performance.now()` method and gives you a simple to use AP
 ## Basic usage:
 Assign perfTime to a variable and pass an options object containing the function. If omitted, function name is set to *unnamed function*
 ```js
-const { perfTime } = require('@tzwel/perftime')
+const perfTime = require('@tzwel/perftime')
 
 function someRandomFunction() {
 	const measurement = new perfTime({function: someRandomFunction})
