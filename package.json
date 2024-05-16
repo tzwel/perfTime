@@ -1,5 +1,5 @@
 {
-  "name": "perftime",
+  "name": "@tzwel/perftime",
   "version": "1.0.0",
   "description": "PerfTime is a simple utility for measuring function execution time",
   "main": "perfTime.js",
