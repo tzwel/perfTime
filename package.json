@@ -1,0 +1,18 @@
+{
+  "name": "perftime",
+  "version": "1.0.0",
+  "description": "PerfTime is a simple utility for measuring function execution time",
+  "main": "perfTime.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "perftime",
+    "performance",
+    "time",
+    "node",
+    "utility"
+  ],
+  "author": "Tzwel",
+  "license": "ISC"
+}
