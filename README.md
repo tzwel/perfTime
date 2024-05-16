@@ -2,7 +2,7 @@
 
 PerfTime is a simple utility for measuring function execution time
 
-It works by wrapping `performance.now()` method and gives you a simple to use API for quick debugging purposes
+It works by wrapping the `performance.now()` method and gives you a simple to use API for quick debugging purposes
 
 ## Installation:
 ```
