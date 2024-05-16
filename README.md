@@ -4,7 +4,12 @@ PerfTime is a simple utility for measuring function execution time
 
 It works by wrapping `performance.now()` method and gives you a simple to use API for quick debugging purposes
 
-## Basic usage:
+## Installation:
+```
+npm i @tzwel/perftime
+```
+
+## Usage:
 Assign perfTime to a variable and pass an options object containing the function. If omitted, function name is set to *unnamed function*
 ```js
 const perfTime = require('@tzwel/perftime')
