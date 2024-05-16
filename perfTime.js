@@ -29,4 +29,4 @@ class perfTime {
 	}
 }
 
-module.exports = { perfTime }
+module.exports = perfTime;

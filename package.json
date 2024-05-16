@@ -14,5 +14,13 @@
     "utility"
   ],
   "author": "Tzwel",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzwel/perfTime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tzwel/perfTime/issues"
+  },
+  "homepage": "https://github.com/tzwel/perfTime#readme"
 }
