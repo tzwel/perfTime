@@ -1,4 +1,4 @@
-# perfTime
+# ⏱️ perfTime
 
 PerfTime is a simple utility for measuring function execution time
 
