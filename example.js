@@ -9,8 +9,7 @@ function someRandomFunction() {
 		console.log(index);
 	}
 
-	const result = measurement.stop()
-	console.log(result);
+	measurement.stop()
 }
 
 someRandomFunction()

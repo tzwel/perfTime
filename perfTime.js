@@ -6,6 +6,7 @@ const defaultOptions = {
 
 class perfTime {
 	time;
+	measurements = [];
 	constructor (options) {
 		this.options = Object.assign(defaultOptions, options)
 		if (this.options.function) {
@@ -25,7 +26,15 @@ class perfTime {
 		if (!this.timeStart) {
 			return console.log(`Can't stop! You haven't started the timer! (${this.options.functionName})`);
 		}
-		console.log(`Executing '${this.options.functionName}' took ${this.timeStop - this.timeStart - this.options.compensation}ms`)
+		const time = this.timeStop - this.timeStart - this.options.compensation
+		console.log(`Executing '${this.options.functionName}' took ${time}ms`)
+		this.measurements.push(time)
+		this.timeStart = undefined
+		this.timeStop = undefined
+	}
+
+	get averageTime() {
+		return this.measurements.reduce((a, b) => a + b) / this.measurements.length;
 	}
 }
 
