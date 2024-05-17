@@ -70,3 +70,9 @@ for (let index = 0; index < 15; index++) {
 console.log(measurement.averageTime);
 ```
 
+## Compensation
+
+PerfTime subtracts 0.0092 from the result by default. To disable this behavior, set compensation to 0:
+```js
+const measurement = new perfTime({compensation: 0})
+```

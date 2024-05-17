@@ -1,7 +1,7 @@
 const defaultOptions = {
 	function: undefined,
 	functionName: 'unnamed function',
-	compensation: 0.0192
+	compensation: 0.0092
 }
 
 class perfTime {
