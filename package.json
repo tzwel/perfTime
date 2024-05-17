@@ -1,7 +1,7 @@
 {
   "name": "@tzwel/perftime",
-  "version": "1.3.4",
-  "description": "PerfTime is a simple utility for measuring function execution time",
+  "version": "1.3.5",
+  "description": "A simple and flexible utility for measuring function execution time",
   "main": "perfTime.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
