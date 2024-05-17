@@ -15,31 +15,32 @@ npm i @tzwel/perftime
 const perfTime = require('@tzwel/perftime')
 
 function someRandomFunction() {
-	const measurement = new perfTime({function: someRandomFunction}) // initialize perfTime
-	measurement.start() // start measuring execution speed
+	// initialize perfTime and start measuring
+	const measurement = new perfTime('function name (or you can leave this blank)').start()
 
 	// code to be measured goes here
 
 	measurement.stop() // stop the measurement and log results
 	// => Executing 'someRandomFunction' took 0.006400000000000735ms
 }
-
-// call the measured function
-someRandomFunction()
 ```
 
-Some methods be chained, which means you can shorten the code above to this:
+You can also start the measurement in an other line:
 ```js
-const measurement = new perfTime({function: someRandomFunction}).start()
+const measurement = new perfTime({function: someRandomFunction})
+measurement.start()
 // code to be measured goes here
 measurement.stop()
 
 ```
 
-You can also pass the name of the benchmarked function as a string, or don't specify it at all. In the latter case fhe function will get called an *unnamed function*
+The name of the measured function can be set in three different ways;
+
+PerfTime accepts an `options` object or a `string` with a name as argument
 ```js
-const measurement = new perfTime('some function name')
-const measurement = new perfTime() // empty, function gets called an *unnamed function*
+new perfTime({function: someFunction}) // options object with the function name derived automatically from the passed function
+new perfTime('some function name') // string name
+new perfTime() // empty, function gets called an *unnamed function*
 ```
 
 
