@@ -1,13 +1,10 @@
-const perfTime = require('./perftime')
+const perfTime = require('./perfTime')
 
 function someRandomFunction() {
-	console.log('xDDDDDDDd');
 	// function code to be measured
-	
+	for (let index = 0; index < 500; index++) {
+		console.log(index);
+	}
 }
 
-const measurement = new perfTime({function: someRandomFunction}).start()
-someRandomFunction()
-measurement.stop()
-console.log(measurement.averageTime);
-
+new perfTime({function: someRandomFunction}).run()

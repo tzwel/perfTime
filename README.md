@@ -9,11 +9,22 @@ It works by wrapping the `performance.now()` method and gives you a simple to us
 npm i @tzwel/perftime
 ```
 
-## Usage:
-### Basic usage
+Then require it in your project
+
 ```js
 const perfTime = require('@tzwel/perftime')
+```
 
+## Usage:
+
+### One-liner
+You can pass your function to perfTime and then call the `.run()` method. This exectues the function, measures its execution time and then logs the result.
+```js
+new perfTime({function: yourFunctionHere}).run()
+```
+
+### Basic usage
+```js
 function someRandomFunction() {
 	// initialize perfTime and start measuring
 	const measurement = new perfTime('function name (or you can leave this blank)').start()
@@ -25,7 +36,7 @@ function someRandomFunction() {
 }
 ```
 
-You can also start the measurement in an other line:
+You can also start the measurement in any point later:
 ```js
 const measurement = new perfTime({function: someRandomFunction})
 measurement.start()
@@ -34,12 +45,13 @@ measurement.stop()
 
 ```
 
-The name of the measured function can be set in three different ways;
+The name of the measured function can be set in four different ways;
 
 PerfTime accepts an `options` object or a `string` with a name as argument
 ```js
-new perfTime({function: someFunction}) // options object with the function name derived automatically from the passed function
 new perfTime('some function name') // string name
+new perfTime({functionName: 'some function name'}) // options object with provided function name
+new perfTime({function: someFunction}) // options object with the function name derived automatically from the passed function
 new perfTime() // empty, function gets called an *unnamed function*
 ```
 

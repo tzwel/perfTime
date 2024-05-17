@@ -40,6 +40,12 @@ class perfTime {
 		this.timeStop = undefined
 	}
 
+	run() {
+		this.start()
+		this.options.function()
+		this.stop()
+	}
+
 	get averageTime() {
 		let measurements = this.measurements
 		if (measurements.length < 1) {
