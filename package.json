@@ -11,7 +11,14 @@
     "performance",
     "time",
     "node",
-    "utility"
+    "utility",
+    "benchmark",
+    "benchmarking",
+    "node.js",
+    "analysis",
+    "execution time",
+    "profiling",
+    "monitoring"
   ],
   "author": "Tzwel",
   "license": "MIT",
