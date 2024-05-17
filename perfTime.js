@@ -8,7 +8,12 @@ class perfTime {
 	time;
 	measurements = [];
 	constructor (options) {
-		this.options = Object.assign(defaultOptions, options)
+		if (typeof options === 'string') {
+			this.options = defaultOptions
+			this.options.functionName = options
+		} else {
+			this.options = Object.assign(defaultOptions, options)
+		}
 		if (this.options.function) {
 			this.options.functionName = options.function.name
 		}

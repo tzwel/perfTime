@@ -36,6 +36,13 @@ measurement.stop()
 
 ```
 
+You can also pass the name of the benchmarked function as a string, or don't specify it at all. In the latter case fhe function will get called an *unnamed function*
+```js
+const measurement = new perfTime('some function name')
+const measurement = new perfTime() // empty, function gets called an *unnamed function*
+```
+
+
 ### Multiple measures and average
 You can measure a function multiple times and then get its average execution time
 
