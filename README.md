@@ -36,7 +36,7 @@ function someRandomFunction() {
 }
 ```
 
-You can also start the measurement in any point later:
+You can also start the measurement at any point later:
 ```js
 const measurement = new perfTime({function: someRandomFunction})
 measurement.start()
