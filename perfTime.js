@@ -14,11 +14,13 @@ class perfTime {
 		}
 		this.timeStart = undefined
 		this.timeStop = undefined
+		return this
 	}
 
 	start() {
 		console.log(`Measuring execution time of '${this.options.functionName}'`)
 		this.timeStart = performance.now()
+		return this
 	}
 
 	stop() {
@@ -34,7 +36,14 @@ class perfTime {
 	}
 
 	get averageTime() {
-		return this.measurements.reduce((a, b) => a + b) / this.measurements.length;
+		let measurements = this.measurements
+		if (measurements.length < 1) {
+			throw 'No measurements were taken, can\'t get average time'
+		}
+		if (measurements.length > 1) {
+			measurements.shift() // Remove first element of array because later calls get optimized
+		}
+		return measurements.reduce((a, b) => a + b) / measurements.length;
 	}
 }
 

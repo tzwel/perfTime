@@ -10,28 +10,39 @@ npm i @tzwel/perftime
 ```
 
 ## Usage:
-Assign perfTime to a variable and pass an options object containing the function. If omitted, function name is set to *unnamed function*
+### Basic usage
 ```js
 const perfTime = require('@tzwel/perftime')
 
 function someRandomFunction() {
-	const measurement = new perfTime({function: someRandomFunction})
-	measurement.start()
+	const measurement = new perfTime({function: someRandomFunction}) // initialize perfTime
+	measurement.start() // start measuring execution speed
 
-	// function code to be measured
+	// code to be measured goes here
 
-	measurement.stop()
+	measurement.stop() // stop the measurement and log results
 	// => Executing 'someRandomFunction' took 0.006400000000000735ms
 }
 
+// call the measured function
 someRandomFunction()
 ```
 
-### Multiple measures and average
+Some methods be chained, which means you can shorten the code above to this:
+```js
+const measurement = new perfTime({function: someRandomFunction}).start()
+// code to be measured goes here
+measurement.stop()
 
+```
+
+### Multiple measures and average
 You can measure a function multiple times and then get its average execution time
 
-It can be done inside the function like this (useful when you want to limit the scope of the measurement): 
+> [!WARNING]
+> When getting average time, the first result always gets omitted in calculating the average, because the first function call is always slower before optimizations take place
+
+It can be done inside the function like this: 
 
 ```js
 function someRandomFunction() {
@@ -39,9 +50,7 @@ function someRandomFunction() {
 	
 	for (let index = 0; index < 15; index++) { // a for loop that executes code multiple times
 		measurement.start()
-
 		// function code to be measured goes here
-
 		measurement.stop()
 	}
 
@@ -49,7 +58,7 @@ function someRandomFunction() {
 }
 ```
 
-Or by wrapping the function call in a for loop
+Or by wrapping the function call in a for loop (you can implement this however you want)
 
 ```js
 const measurement = new perfTime({function: someRandomFunction})
@@ -61,9 +70,3 @@ for (let index = 0; index < 15; index++) {
 console.log(measurement.averageTime);
 ```
 
-
-### Compensation
-PerfTime subtracts `0.0192` from the result by default. To disable this behavior, set compensation to 0:
-```js
-const measurement = new perfTime({compensation: 0})
-```
