@@ -6,4 +6,5 @@ function someRandomFunction() {
 	}
 }
 
-new perfTime({function: someRandomFunction}).run(1)
+const mesaurement = new perfTime({function: someRandomFunction}).run(234)
+console.log(mesaurement.averageTime);

@@ -45,6 +45,7 @@ class perfTime {
 			this.options.function()
 			this.stop()
 		}
+		return this
 	}
 
 	get averageTime() {
