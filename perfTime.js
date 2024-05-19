@@ -1,7 +1,6 @@
 const defaultOptions = {
 	function: undefined,
-	functionName: 'unnamed function',
-	compensation: 0.0092
+	functionName: 'unnamed function'
 }
 
 class perfTime {
@@ -33,17 +32,19 @@ class perfTime {
 		if (!this.timeStart) {
 			return console.log(`Can't stop! You haven't started the timer! (${this.options.functionName})`);
 		}
-		const time = this.timeStop - this.timeStart - this.options.compensation
+		const time = this.timeStop - this.timeStart
 		console.log(`Executing '${this.options.functionName}' took ${time}ms`)
 		this.measurements.push(time)
 		this.timeStart = undefined
 		this.timeStop = undefined
 	}
 
-	run() {
-		this.start()
-		this.options.function()
-		this.stop()
+	run(times = 1) {
+		for (let index = 0; index < Math.max(1, times); index++) {
+			this.start()
+			this.options.function()
+			this.stop()
+		}
 	}
 
 	get averageTime() {

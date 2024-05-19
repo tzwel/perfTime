@@ -36,7 +36,7 @@ function someRandomFunction() {
 }
 ```
 
-You can also start the measurement in any point later:
+You can also start the measurement at any point later:
 ```js
 const measurement = new perfTime({function: someRandomFunction})
 measurement.start()
@@ -55,14 +55,19 @@ new perfTime({function: someFunction}) // options object with the function name 
 new perfTime() // empty, function gets called an *unnamed function*
 ```
 
-
 ### Multiple measures and average
 You can measure a function multiple times and then get its average execution time
 
 > [!WARNING]
 > When getting average time, the first result always gets omitted in calculating the average, because the first function call is always slower before optimizations take place
 
-It can be done inside the function like this: 
+It can be done using the one-liner like this:
+```js
+const measurement = new perfTime({function: someRandomFunction}).run(5) // benchmarks the function 5 times
+console.log(measurement.averageTime) // log the average time of execution
+```
+
+Or inside the function like this: 
 
 ```js
 function someRandomFunction() {
@@ -74,7 +79,7 @@ function someRandomFunction() {
 		measurement.stop()
 	}
 
-	console.log(measurement.averageTime); // log the average time of execution
+	console.log(measurement.averageTime);
 }
 ```
 
@@ -88,11 +93,4 @@ for (let index = 0; index < 15; index++) {
 	measurement.stop()
 }
 console.log(measurement.averageTime);
-```
-
-## Compensation
-
-PerfTime subtracts 0.0092 from the result by default. To disable this behavior, set compensation to 0:
-```js
-const measurement = new perfTime({compensation: 0})
 ```
