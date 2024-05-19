@@ -1,6 +1,6 @@
 # ⏱️ perfTime
 
-PerfTime is a simple and flexible utility for measuring function execution time
+PerfTime is a simple and flexible utility for measuring function execution time. No depenencies.
 
 It works by wrapping the `performance.now()` method and gives you a simple to use API for quick debugging purposes
 
