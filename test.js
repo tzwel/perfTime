@@ -6,5 +6,16 @@ function someRandomFunction() {
 	}
 }
 
-const mesaurement = new perfTime({function: someRandomFunction}).run(234)
-console.log(mesaurement.averageTime);
+async function asyncFunction() {
+	return new Promise(resolve => setTimeout(resolve, 1));
+}
+
+// (async()=> {
+// 	await asyncFunction()
+// })()
+
+// new perfTime({function: asyncFunction}).runAsync(3).then((measurement)=> {
+// 	console.log(measurement.averageTime);
+// })
+
+new perfTime({function: asyncFunction}).runAsync()

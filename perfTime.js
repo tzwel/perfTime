@@ -48,6 +48,15 @@ class perfTime {
 		return this
 	}
 
+	async runAsync(times = 1) {
+		for (let index = 0; index < Math.max(1, times); index++) {
+			this.start()
+			await this.options.function()
+			this.stop()
+		}
+		return this
+	}
+
 	get averageTime() {
 		let measurements = this.measurements
 		if (measurements.length < 1) {

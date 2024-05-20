@@ -21,6 +21,7 @@ const perfTime = require('@tzwel/perftime')
 You can pass your function to perfTime and then call the `.run()` method. This exectues the function, measures its execution time and then logs the result.
 ```js
 new perfTime({function: yourFunctionHere}).run()
+new perfTime({function: asyncFunction}).runAsync() // for asynchronous functions
 ```
 
 ### Basic usage
@@ -65,6 +66,11 @@ It can be done using the one-liner like this:
 ```js
 const measurement = new perfTime({function: someRandomFunction}).run(5) // benchmarks the function 5 times
 console.log(measurement.averageTime) // log the average time of execution
+
+// Async variant:
+new perfTime({function: asyncFunction}).runAsync(5).then((measurement)=> {
+	console.log(measurement.averageTime);
+})
 ```
 
 Or inside the function like this: 
@@ -94,3 +100,7 @@ for (let index = 0; index < 15; index++) {
 }
 console.log(measurement.averageTime);
 ```
+
+## Async
+
+Currently async functions can only be benchmarked using `runAsync` and are run one by one, not in parallel
