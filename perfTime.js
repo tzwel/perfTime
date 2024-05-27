@@ -32,9 +32,9 @@ class perfTime {
 		if (!this.timeStart) {
 			return console.log(`Can't stop! You haven't started the timer! (${this.options.functionName})`);
 		}
-		const time = this.timeStop - this.timeStart
-		console.log(`Executing '${this.options.functionName}' took ${time}ms`)
-		this.measurements.push(time)
+		this.time = this.timeStop - this.timeStart
+		console.log(`Executing '${this.options.functionName}' took ${this.time}ms`)
+		this.measurements.push(this.time)
 		this.timeStart = undefined
 		this.timeStop = undefined
 	}
