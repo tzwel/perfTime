@@ -60,7 +60,7 @@ new perfTime() // empty, function gets called an *unnamed function*
 You can measure a function multiple times and then get its average execution time
 
 > [!WARNING]
-> When getting average time, the first result always gets omitted in calculating the average, because the first function call is always slower before optimizations take place
+> When getting average time, the first result always gets omitted because the first function call is always slower before optimizations take place
 
 It can be done using the one-liner like this:
 ```js
