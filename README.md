@@ -1,6 +1,6 @@
 # ⏱️ perfTime
 
-![GitHub Repo stars](https://img.shields.io/github/stars/tzwel/perfTime?style=for-the-badge&logo=Github&label=Star%20on%20Github&color=green)
+[![GitHub Repo stars](https://img.shields.io/github/stars/tzwel/perfTime?style=for-the-badge&logo=Github&label=Star%20on%20Github&color=green)](https://github.com/tzwel/perfTime)
 
 PerfTime is a simple and flexible utility for measuring function execution time. No depenencies.
 
